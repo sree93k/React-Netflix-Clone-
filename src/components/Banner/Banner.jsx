@@ -8,7 +8,7 @@ const [slide,setSlide]=useState(0)
  useEffect(()=>{
     axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
     .then((response)=>{
-      
+        console.log(response.data.results[0]);
         setMovie(response.data.results[slide])
         setSlide(slide+1)
     })
